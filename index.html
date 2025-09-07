@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone - Sports Community Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/en.css">
+</head>
+<body dir="ltr">
+    <div class="up">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="imgs/logo.png" alt="Fit Sport Logo">
+        </div>
+        <nav>
+            <ul class="links">
+                <li><a href="index.html" data-translate="Home">Home</a></li>
+                <li><a href="pages/playgrounds.html" data-translate="Playgrounds">Playgrounds</a></li>
+                <li><a href="dashboards/user-dashboard.html" data-translate="User Dashboard">User Dashboard</a></li>
+                <li><a href="dashboards/club-dashboard.html" data-translate="Club Dashboard">Club Dashboard</a></li>
+                <li><a href="dashboards/admin-dashboard.html" data-translate="Admin Dashboard">Admin Dashboard</a></li>
+                <li><a href="pages/contact.html" data-translate="Contact Us">Contact Us</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <div class="selected-lang">
+                    <span>English</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('ar')">العربية</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('en')">English</a></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <a href="javascript:void(0)" onclick="alert('Demo: Login functionality not available in static version')" data-translate="Login">
+                    Login
+                </a>
+                <a href="javascript:void(0)" onclick="alert('Demo: Sign up functionality not available in static version')" class="btn" data-translate="Create Account">
+                    Create Account
+                </a>
+            </div>
+        </nav>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="text">
+            <h4 data-translate="Play and challenge now!">Play and challenge now!</h4>
+            <h1 data-translate="An integrated sports community in your hands">An integrated sports community in your hands</h1>
+            <p>The easiest and fastest way to book stadiums and share play with athletes with the same passion. Choose your favorite sport, join a match, or create your own team!</p>
+            <div class="outline">
+                <a href="pages/playgrounds.html" class="btn outline" data-translate="Get Started">
+                    Get Started
+                </a>
+            </div>
+        </div>
+        <i class="fa-solid fa-futbol first"></i>
+        <i class="fa-solid fa-medal second"></i>
+        <i class="fa-solid fa-trophy third"></i>
+        <i class="fa-solid fa-baseball four"></i>
+        <i class="fa-solid fa-baseball-bat-ball five"></i>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benifits">
+        <div class="img">
+            <img src="imgs/about.png" alt="Balls">
+        </div>
+        <div class="text">
+            <h4>A sports experience from another level</h4>
+            <h1>A revolution in the world of social sports</h1>
+            <p>Fit Sport is your ideal platform that combines the ease of booking stadiums and the fun of group play in one place.</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>Instant booking</h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>Join the players</h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>Sports Community</h5>
+                </div>
+                <div class="card">
+                    <img src="imgs/benift-1.png" alt="Benifit">
+                    <h5>Professional trainers</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how">
+        <div class="text">
+            <h4>Find out how</h4>
+            <h2>How does Fit Sport work?</h2>
+            <p>Our platform is designed to be your gateway to the world of sports. Follow these simple steps, start your sports journey and achieve your goals!</p>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="steps">
+        <ul class="steps">
+            <li>
+                <img src="imgs/one.png" alt="Step One">
+                <h5>Choose your sport</h5>
+            </li>
+            <li>
+                <img src="imgs/two.png" alt="Step Two">
+                <h5>Choose your stadium</h5>
+            </li>
+            <li>
+                <img src="imgs/three.png" alt="Step Three">
+                <h5>Join a team</h5>
+            </li>
+            <li>
+                <img src="imgs/four.png" alt="Step Four">
+                <h5>Invite your friends</h5>
+            </li>
+            <li>
+                <img src="imgs/five.png" alt="Step Five">
+                <h5>Start playing</h5>
+            </li>
+        </ul>
+        <div class="step-img">
+            <h3>Choose the match</h3>
+            <img src="imgs/step-1.png" alt="Step One">
+        </div>
+    </section>
+
+    <!-- Sports -->
+    <section class="sports">
+        <div class="text">
+            <h4>Pioneers of stadium booking services</h4>
+            <h2>A comprehensive list of amazing features</h2>
+            <p>Fit Sport is the most advanced platform for booking sports stadiums, and it provides you with the highest level of service across a wide range of stadiums and sports.</p>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/football.png" alt="Sport One">
+                    <p>Football</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/padel.png" alt="padel">
+                    <p>Padel</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/swim.png" alt="swim">
+                    <p>Swimming</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/football.png" alt="Basketball">
+                    <p>Basketball</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                    <img src="imgs/padel.png" alt="Tennis">
+                    <p>Tennis</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="text">
+            <h4>FAQ</h4>
+            <h2>If you have questions, we have the answers</h2>
+            <p>Answers to the most frequently asked questions about booking stadiums, payment, and using Fit Sport.</p>
+        </div>
+    </section>
+
+    <!-- Questions -->
+    <section class="questions">
+        <div class="holder">
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h5>How do I book a stadium?</h5>
+                    </div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="answer">
+                    <p>You can book a stadium by browsing available playgrounds, selecting your preferred time slot, and completing the booking process through our platform.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h5>What payment methods do you accept?</h5>
+                    </div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="answer">
+                    <p>We accept multiple payment methods including Fawry, Paymob, and cash on delivery for your convenience.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h5>Can I cancel my booking?</h5>
+                    </div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="answer">
+                    <p>Yes, you can cancel your booking up to 2 hours before the scheduled time. Cancellation policies may vary by venue.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="question">
+                    <div class="start">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <h5>How do I join a team or match?</h5>
+                    </div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="answer">
+                    <p>Browse available matches in your area, check the skill level requirements, and join teams looking for players in your preferred sport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Logo">
+            </div>
+            <ul class="links">
+                <li><a href="pages/contact.html">Contact Us</a></li>
+                <li><a href="pages/terms.html">Terms of Use</a></li>
+                <li><a href="pages/policy.html">Privacy Policy</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="payments">
+                <li><img src="imgs/fawry.png" alt="Fawry"></li>
+                <li><img src="imgs/paymob.png" alt="Paymob"></li>
+                <li><img src="imgs/cod.png" alt="Cash On Delivery"></li>
+            </ul>
+            <ul class="social">
+                <li><a href="#"><img src="imgs/facebook.gif" alt="Facebook"></a></li>
+                <li><a href="#"><img src="imgs/tiktok.gif" alt="TikTok"></a></li>
+                <li><a href="#"><img src="imgs/instagram.gif" alt="Instagram"></a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; <span><script>document.write(new Date().getFullYear());</script></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/gsaps.js"></script>
+    
+    <!-- Language Switcher Script -->
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('lang', 'ar');
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.body.setAttribute('dir', 'rtl');
+                
+                // Update content to Arabic
+                document.querySelector('title').textContent = 'فت زون - منصة المجتمع الرياضي';
+                document.querySelector('.hero h4').textContent = 'العب وتحدى الآن!';
+                document.querySelector('.hero h1').textContent = 'مجتمع رياضي متكامل في يديك';
+                document.querySelector('.hero p').textContent = 'أسهل وأسرع طريقة لحجز الملاعب ومشاركة اللعب مع الرياضيين بنفس الشغف. اختر رياضتك المفضلة، انضم لمباراة، أو كون فريقك الخاص!';
+                document.querySelector('.hero .btn').textContent = 'ابدأ الآن';
+                document.querySelector('.selected-lang span').textContent = 'العربية';
+                
+                // Update navigation
+                document.querySelector('.links a[href="index.html"]').textContent = 'الرئيسية';
+                document.querySelector('.links a[href="pages/playgrounds.html"]').textContent = 'الملاعب';
+                document.querySelector('.links a[href="dashboards/user-dashboard.html"]').textContent = 'لوحة المستخدم';
+                document.querySelector('.links a[href="dashboards/club-dashboard.html"]').textContent = 'لوحة النادي';
+                document.querySelector('.links a[href="dashboards/admin-dashboard.html"]').textContent = 'لوحة الإدارة';
+                document.querySelector('.links a[href="pages/contact.html"]').textContent = 'تواصل معنا';
+                
+                // Update buttons
+                document.querySelector('.btns a:first-child').textContent = 'تسجيل الدخول';
+                document.querySelector('.btns a.btn').textContent = 'إنشاء حساب';
+                
+            } else {
+                document.documentElement.setAttribute('lang', 'en');
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.body.setAttribute('dir', 'ltr');
+                
+                // Reset to English
+                document.querySelector('title').textContent = 'FitZone - Sports Community Platform';
+                document.querySelector('.hero h4').textContent = 'Play and challenge now!';
+                document.querySelector('.hero h1').textContent = 'An integrated sports community in your hands';
+                document.querySelector('.hero p').textContent = 'The easiest and fastest way to book stadiums and share play with athletes with the same passion. Choose your favorite sport, join a match, or create your own team!';
+                document.querySelector('.hero .btn').textContent = 'Get Started';
+                document.querySelector('.selected-lang span').textContent = 'English';
+                
+                // Reset navigation
+                document.querySelector('.links a[href="index.html"]').textContent = 'Home';
+                document.querySelector('.links a[href="pages/playgrounds.html"]').textContent = 'Playgrounds';
+                document.querySelector('.links a[href="dashboards/user-dashboard.html"]').textContent = 'User Dashboard';
+                document.querySelector('.links a[href="dashboards/club-dashboard.html"]').textContent = 'Club Dashboard';
+                document.querySelector('.links a[href="dashboards/admin-dashboard.html"]').textContent = 'Admin Dashboard';
+                document.querySelector('.links a[href="pages/contact.html"]').textContent = 'Contact Us';
+                
+                // Reset buttons
+                document.querySelector('.btns a:first-child').textContent = 'Login';
+                document.querySelector('.btns a.btn').textContent = 'Create Account';
+            }
+        }
+    </script>
+</body>
+</html>
