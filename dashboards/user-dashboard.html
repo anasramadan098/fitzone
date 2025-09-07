@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - FitZone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user-dash.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/en.css">
+</head>
+<body dir="ltr">
+    <div class="up"><i class="fa-solid fa-arrow-up"></i></div>
+
+    <header>
+        <div class="logo"><img src="../imgs/logo.png" alt="Fit Sport Logo"></div>
+        <nav>
+            <ul class="links">
+                <li><a href="../index.html" data-translate="Home">Home</a></li>
+                <li><a href="../pages/playgrounds.html" data-translate="Playgrounds">Playgrounds</a></li>
+                <li><a href="user-dashboard.html" class="active" data-translate="User Dashboard">User Dashboard</a></li>
+                <li><a href="club-dashboard.html" data-translate="Club Dashboard">Club Dashboard</a></li>
+                <li><a href="admin-dashboard.html" data-translate="Admin Dashboard">Admin Dashboard</a></li>
+                <li><a href="../pages/contact.html" data-translate="Contact Us">Contact Us</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <div class="selected-lang">
+                    <span>English</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('ar')">العربية</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('en')">English</a></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <a href="javascript:void(0)" onclick="alert('Demo: Logout functionality not available in static version')" data-translate="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </div>
+        </nav>
+        <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <section class="user-dash">
+        <ul class="user-links">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Deposit</a></li>
+            <li><a href="#">Withdraw</a></li>
+            <li><a href="#">Affiliate</a></li>
+            <li><a href="#">Transactions</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="statics">
+            <div class="user-info">
+                <div class="box">
+                    <img src="../imgs/demo-profile.png" alt="User Image">
+                    <h2>Ahmed Mohamed</h2>
+                    <p>ID: 123456</p>
+                </div>
+                <div class="box h-btn">
+                    <img src="../imgs/balance.png" alt="Balance Image">
+                    <h3>£150.00</h3>
+                    <p>Available Balance</p>
+                    <div class="btns">
+                        <a href="#" class="with_draw_btn">Withdraw</a>
+                        <a href="#" class="deposit_btn">Deposit</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="../imgs/help.png" alt="Contact Us">
+                    <h3>Need Help?</h3>
+                    <p>Have questions? Our experts are here to help!</p>
+                    <div class="outline">
+                        <a href="javascript:void(0)" onclick="alert('Demo: WhatsApp contact')" class="btn">Get Start Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard active">
+                <div class="boxes">
+                    <div class="box">
+                        <img src="../imgs/matches.png" alt="Matches">
+                        <div class="stats">
+                            <span class="number">24</span>
+                            <span class="text">Total Match</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="../imgs/matches.png" alt="Sport">
+                        <div class="stats">
+                            <span class="number">Padel</span>
+                            <span class="text">Fav. Sports</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="../imgs/matches.png" alt="Role">
+                        <div class="stats">
+                            <span class="number">CAM</span>
+                            <span class="text">Football Role</span>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <img src="../imgs/matches.png" alt="Points">
+                        <div class="stats">
+                            <span class="number">1250</span>
+                            <span class="text">Points</span>
+                            <a href="javascript:void(0)" onclick="alert('Demo: Points system')">Know the points system</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="activity">
+                    <h3 class="title">Recent Activity</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Hour</td>
+                                <td>Playground Name</td>
+                                <td>Count</td>
+                                <td>Balance</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6:00</td>
+                                <td>Champions Football Club</td>
+                                <td>2</td>
+                                <td>£25.00</td>
+                            </tr>
+                            <tr>
+                                <td>3:00</td>
+                                <td>Elite Basketball Court</td>
+                                <td>1</td>
+                                <td>£20.00</td>
+                            </tr>
+                            <tr>
+                                <td>10:00</td>
+                                <td>Wimbledon Tennis Club</td>
+                                <td>1</td>
+                                <td>£30.00</td>
+                            </tr>
+                            <tr>
+                                <td>8:00</td>
+                                <td>Aqua Swimming Center</td>
+                                <td>3</td>
+                                <td>£45.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="deposit">
+                <h3 class="title">Deposit</h3>
+                <div class="methods">
+                    <div class="method" data-type="fawry">
+                        <img src="../imgs/fawry.png" alt="Fawry">
+                    </div>
+                    <div class="method" data-type="paymob">
+                        <img src="../imgs/paymob.png" alt="Paymob">
+                    </div>
+                    <div class="method" data-type="instapay">
+                        <img src="../imgs/instapay.png" alt="Instapay">
+                    </div>
+                </div>
+                <form action="javascript:void(0)" onsubmit="alert('Demo: Deposit completed')" method="POST" class="deposit-form">
+                    <div class="input">
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="amount" placeholder="Enter the amount">
+                        <input type="hidden" name="method">
+                    </div>
+                    <div class="outline">
+                        <button type="submit" class="btn">Complete the deposit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="withdraw">
+                <h3 class="title">Withdraw</h3>
+                <form action="javascript:void(0)" onsubmit="alert('Demo: Withdrawal completed')" method="POST" class="withdraw-form">
+                    <div class="input">
+                        <label for="withdraw-amount">Amount</label>
+                        <input type="number" name="withdraw-amount" id="withdraw-amount" placeholder="Enter the amount">
+                    </div>
+                    <div class="input">
+                        <label for="wallet-address">Wallet address</label>
+                        <input type="text" name="wallet-address" id="wallet-address" placeholder="Enter your wallet address">
+                    </div>
+                    <div class="outline">
+                        <button type="submit" class="btn">Complete the withdrawal</button>
+                    </div>
+                </form>
+            </div>
+            <div class="affilate">
+                <div class="holder">
+                    <h3>Affiliate Program</h3>
+                    <p>Get a lifetime reward up to 15% for inviting new people!</p>
+                    <div class="box">
+                        <form action="">
+                            <div class="input">
+                                <label for="code">My Referral Code</label>
+                                <input type="text" name="code" id="code" readonly value="ABC123XYZ" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="boxes">
+                        <div class="box">
+                            <img src="../imgs/earned-referral-icon-1.png" alt="Earnings">
+                            <div class="stats">
+                                <span class="number">$89.50</span>
+                                <span class="text">Earned Referral</span>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <img src="../imgs/earned-referral-icon-1.png" alt="Total">
+                            <div class="stats">
+                                <span class="number">$2956.00</span>
+                                <span class="text">Total Earnings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box col">
+                        <div class="row">
+                            <h4>Referral History</h4>
+                            <form action="">
+                                <div class="input">
+                                    <input type="date" name="affilate_date">
+                                </div>
+                                <div class="input">
+                                    <select name="affilate_type">
+                                        <option value="" selected disabled>Select Type</option>
+                                        <option value="user">User</option>
+                                        <option value="book">Book</option>
+                                    </select>
+                                </div>
+                                <button class="btn">Filter</button>
+                            </form>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>User</td>
+                                    <td>Date</td>
+                                    <td>Amount</td>
+                                    <td>Type</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sarah Ahmed</td>
+                                    <td>2024-01-15</td>
+                                    <td>$15.00</td>
+                                    <td>User</td>
+                                </tr>
+                                <tr>
+                                    <td>Mohamed Ali</td>
+                                    <td>2024-01-10</td>
+                                    <td>$5.50</td>
+                                    <td>Book</td>
+                                </tr>
+                                <tr>
+                                    <td>Nour Hassan</td>
+                                    <td>2024-01-08</td>
+                                    <td>$12.00</td>
+                                    <td>User</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="transication">
+                <form action="">
+                    <div class="row">
+                        <div class="input">
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="trans_date" />
+                        </div>
+                        <button class="btn">Filter</button>
+                    </div>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Date/Time</td>
+                            <td>Amount</td>
+                            <td>Type</td>
+                            <td>Method</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-01-20 14:30</td>
+                            <td>£25.00</td>
+                            <td>Booking</td>
+                            <td>Fawry</td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-18 10:15</td>
+                            <td>£100.00</td>
+                            <td>Deposit</td>
+                            <td>Paymob</td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-15 16:45</td>
+                            <td>£20.00</td>
+                            <td>Booking</td>
+                            <td>Cash</td>
+                        </tr>
+                        <tr>
+                            <td>2024-01-12 09:20</td>
+                            <td>£50.00</td>
+                            <td>Withdraw</td>
+                            <td>InstaPay</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <form action="javascript:void(0)" onsubmit="alert('Demo: Settings saved')" class="setting" method="POST" enctype="multipart/form-data">
+                <h3 class="title">Settings</h3>
+                <div class="photo box">
+                    <img src="../imgs/demo-profile.png" alt="Demo Profile">
+                    <div class="content">
+                        <h4>Upload profile photo via:</h4>
+                        <input type="file" name="img" id="img" accept="image/*">
+                        <p>Choose a photo from your personal computer. 3MB max.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="text">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <a href="mailto:ahmed@example.com">ahmed@example.com</a>
+                        <span class="green">Verified Account</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="outline">
+                        <button type="submit" class="btn">Save Changes</button>
+                    </div>
+                    <a href="#" class="btn per-btn">Personal Setting</a>
+                </div>
+            </form>
+            <form action="javascript:void(0)" onsubmit="alert('Demo: Profile updated')" class="update" method="POST">
+                <h2>Personal Details</h2>
+                <div class="row">
+                    <div class="input">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your full name" value="Ahmed Mohamed" required>
+                    </div>
+                    <div class="input">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" value="+20123456789" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" id="age" placeholder="Enter your age" value="28" required>
+                    </div>
+                    <div class="input">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" value="New Cairo, Egypt" placeholder="Enter your address">
+                        <a href="#" onclick="AutoFillLocation(this)">AutoFill</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male" selected>Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <label for="football">Football Role</label>
+                        <select name="football_role" id="football" required>
+                            <option value="">Select football role</option>
+                            <option value="CAM" selected>CAM</option>
+                            <option value="CB">CB</option>
+                            <option value="CF">CF</option>
+                            <option value="CM">CM</option>
+                            <option value="CDM">CDM</option>
+                            <option value="GK">GK</option>
+                            <option value="LB">LB</option>
+                            <option value="LM">LM</option>
+                            <option value="LW">LW</option>
+                            <option value="RB">RB</option>
+                            <option value="RM">RM</option>
+                            <option value="RW">RW</option>
+                            <option value="ST">ST</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="image">Profile Image</label>
+                    <input type="file" name="image" id="image" accept="image/*">
+                </div>
+                <div class="outline">
+                    <button type="submit" class="btn">Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="logo"><img src="../imgs/logo.png" alt="Logo"></div>
+            <ul class="links">
+                <li><a href="../pages/contact.html">Contact Us</a></li>
+                <li><a href="../pages/terms.html">Terms of Use</a></li>
+                <li><a href="../pages/policy.html">Privacy Policy</a></li>
+                <li><a href="../pages/about.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="payments">
+                <li><img src="../imgs/fawry.png" alt="Fawry"></li>
+                <li><img src="../imgs/paymob.png" alt="Paymob"></li>
+                <li><img src="../imgs/cod.png" alt="Cash On Delivery"></li>
+            </ul>
+            <ul class="social">
+                <li><a href="#"><img src="../imgs/facebook.gif" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../imgs/tiktok.gif" alt="TikTok"></a></li>
+                <li><a href="#"><img src="../imgs/instagram.gif" alt="Instagram"></a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; <span><script>document.write(new Date().getFullYear());</script></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/user-dash.js"></script>
+    <script>
+        contentSections = document.querySelectorAll('.statics > *:not(.user-info)');
+        
+        specifClick(document.querySelector('.per-btn'), document.querySelector('form.update'));
+        specifClick(document.querySelector('.with_draw_btn'), document.querySelector('.withdraw'));
+        specifClick(document.querySelector('.deposit_btn'), document.querySelector('.deposit'));
+    </script>
+</body>
+</html>

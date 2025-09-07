@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الإدارة - FitZone</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #7267EF;
+            --secondary-color: #c7d9ff;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .sidebar .logo {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        .sidebar .logo img {
+            max-width: 120px;
+        }
+        
+        .sidebar-nav {
+            padding: 20px 0;
+        }
+        
+        .sidebar-nav .nav-item {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-nav .nav-link {
+            padding: 12px 25px;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav .nav-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .sidebar-nav .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 0;
+        }
+        
+        .top-header {
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .content-area {
+            padding: 30px;
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: none;
+        }
+        
+        .stats-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .stats-icon.primary {
+            background: rgba(114, 103, 239, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .stats-icon.success {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+        }
+        
+        .stats-icon.warning {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .stats-icon.danger {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+        
+        .stats-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .stats-label {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+        
+        .table-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .table-card .card-header {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 25px;
+        }
+        
+        .table-card .table {
+            margin-bottom: 0;
+        }
+        
+        .table-card .table th {
+            border-top: none;
+            padding: 15px 25px;
+            background: #f8f9fa;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .table-card .table td {
+            padding: 15px 25px;
+            vertical-align: middle;
+        }
+        
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .btn-sm {
+            padding: 5px 12px;
+            font-size: 12px;
+        }
+        
+        .feed-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feed-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feed-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(114, 103, 239, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .chart-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                margin-left: -280px;
+                transition: margin-left 0.3s ease;
+            }
+            
+            .sidebar.show {
+                margin-left: 0;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../imgs/logo.png" alt="FitZone">
+                </a>
+            </div>
+            <ul class="sidebar-nav list-unstyled">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active" data-tab="dashboard">
+                        <i class="fa fa-home"></i>
+                        <span>لوحة التحكم</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#users" class="nav-link" data-tab="users">
+                        <i class="fa fa-users"></i>
+                        <span>المستخدمين</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#clubs" class="nav-link" data-tab="clubs">
+                        <i class="fa fa-building"></i>
+                        <span>الأندية</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#hours" class="nav-link" data-tab="hours">
+                        <i class="fa fa-clock"></i>
+                        <span>الساعات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sports" class="nav-link" data-tab="sports">
+                        <i class="fa fa-futbol"></i>
+                        <span>الرياضات</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#bookings" class="nav-link" data-tab="bookings">
+                        <i class="fa fa-calendar-check"></i>
+                        <span>الحجوزات</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Header -->
+            <div class="top-header">
+                <div>
+                    <h4 class="mb-0">لوحة تحكم الإدارة</h4>
+                    <small class="text-muted">مرحباً بك في نظام إدارة FitZone</small>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="../index.html" class="btn btn-outline-primary btn-sm">العودة للموقع</a>
+                    <div class="dropdown">
+                        <button class="btn btn-link" type="button" data-bs-toggle="dropdown">
+                            <i class="fa fa-user-circle fa-lg"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Tab -->
+                <div id="dashboard-content" class="tab-content active">
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-icon primary">
+                                    <i class="fa fa-users fa-lg"></i>
+                                </div>
+                                <div class="stats-number">1,247</div>
+                                <div class="stats-label">إجمالي المستخدمين</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-icon success">
+                                    <i class="fa fa-building fa-lg"></i>
+                                </div>
+                                <div class="stats-number">34</div>
+                                <div class="stats-label">الأندية المسجلة</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-icon warning">
+                                    <i class="fa fa-clock fa-lg"></i>
+                                </div>
+                                <div class="stats-number">2,856</div>
+                                <div class="stats-label">الساعات المحجوزة</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <div class="stats-icon danger">
+                                    <i class="fa fa-dollar-sign fa-lg"></i>
+                                </div>
+                                <div class="stats-number">$45,678</div>
+                                <div class="stats-label">إجمالي الإيرادات</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8 mb-4">
+                            <div class="chart-card">
+                                <h5 class="mb-4">تقرير المبيعات الشهرية</h5>
+                                <div class="chart-placeholder">
+                                    <div class="text-center">
+                                        <i class="fa fa-chart-line fa-3x mb-3"></i>
+                                        <div>رسم بياني للمبيعات الشهرية</div>
+                                        <small>البيانات محدثة حتى ديسمبر 2024</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="chart-card">
+                                <h5 class="mb-4">رضا العملاء</h5>
+                                <div class="chart-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                    <div class="text-center">
+                                        <i class="fa fa-chart-pie fa-3x mb-3"></i>
+                                        <div>رسم دائري لرضا العملاء</div>
+                                        <small>66% راضون جداً</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Users Table -->
+                    <div class="row">
+                        <div class="col-lg-8 mb-4">
+                            <div class="table-card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">أحدث المستخدمين</h5>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>الاسم</th>
+                                                <th>البريد الإلكتروني</th>
+                                                <th>النوع</th>
+                                                <th>النقاط</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>أحمد محمد</td>
+                                                <td>ahmed@example.com</td>
+                                                <td><span class="badge bg-primary">لاعب</span></td>
+                                                <td>150</td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm">عرض</button>
+                                                    <button class="btn btn-warning btn-sm">تعديل</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>سارة علي</td>
+                                                <td>sara@example.com</td>
+                                                <td><span class="badge bg-warning">نادي</span></td>
+                                                <td>300</td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm">عرض</button>
+                                                    <button class="btn btn-warning btn-sm">تعديل</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>محمود حسن</td>
+                                                <td>mahmoud@example.com</td>
+                                                <td><span class="badge bg-primary">لاعب</span></td>
+                                                <td>75</td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm">عرض</button>
+                                                    <button class="btn btn-warning btn-sm">تعديل</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="feed-card">
+                                <h5 class="mb-4">التحديثات الأخيرة</h5>
+                                <div class="feed-item">
+                                    <div class="feed-icon">
+                                        <i class="fa fa-bell"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">لديك 3 مهام معلقة</h6>
+                                        <small class="text-muted">الآن</small>
+                                    </div>
+                                </div>
+                                <div class="feed-item">
+                                    <div class="feed-icon">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">طلب جديد تم استلامه</h6>
+                                        <small class="text-muted">منذ 30 دقيقة</small>
+                                    </div>
+                                </div>
+                                <div class="feed-item">
+                                    <div class="feed-icon">
+                                        <i class="fa fa-user-plus"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">مستخدم جديد انضم</h6>
+                                        <small class="text-muted">منذ ساعة</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users Tab -->
+                <div id="users-content" class="tab-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>إدارة المستخدمين</h4>
+                        <button class="btn btn-primary">إضافة مستخدم جديد</button>
+                    </div>
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الاسم</th>
+                                        <th>البريد الإلكتروني</th>
+                                        <th>الهاتف</th>
+                                        <th>النوع</th>
+                                        <th>النقاط</th>
+                                        <th>الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>أحمد محمد علي</td>
+                                        <td>ahmed@example.com</td>
+                                        <td>+20 100 123 4567</td>
+                                        <td><span class="badge bg-primary">لاعب</span></td>
+                                        <td>150</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">عرض</button>
+                                            <button class="btn btn-warning btn-sm">تعديل</button>
+                                            <button class="btn btn-danger btn-sm">حذف</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>سارة علي حسن</td>
+                                        <td>sara@example.com</td>
+                                        <td>+20 101 234 5678</td>
+                                        <td><span class="badge bg-warning">نادي</span></td>
+                                        <td>300</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">عرض</button>
+                                            <button class="btn btn-warning btn-sm">تعديل</button>
+                                            <button class="btn btn-danger btn-sm">حذف</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>محمود حسن محمد</td>
+                                        <td>mahmoud@example.com</td>
+                                        <td>+20 102 345 6789</td>
+                                        <td><span class="badge bg-primary">لاعب</span></td>
+                                        <td>75</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">عرض</button>
+                                            <button class="btn btn-warning btn-sm">تعديل</button>
+                                            <button class="btn btn-danger btn-sm">حذف</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs content would be similar structure -->
+                <div id="clubs-content" class="tab-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4>إدارة الأندية</h4>
+                        <button class="btn btn-primary">إضافة نادي جديد</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <img src="../imgs/demo-club1.jpg" alt="النادي الأهلي" class="img-fluid mb-3" style="border-radius: 10px; height: 150px; width: 100%; object-fit: cover;">
+                                <h5>النادي الأهلي الرياضي</h5>
+                                <p class="text-muted mb-2">القاهرة، مصر</p>
+                                <p class="mb-3"><strong>السعة:</strong> 500 شخص</p>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-sm">عرض</button>
+                                    <button class="btn btn-warning btn-sm">تعديل</button>
+                                    <button class="btn btn-danger btn-sm">حذف</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="stats-card">
+                                <img src="../imgs/demo-club2.jpg" alt="نادي الزمالك" class="img-fluid mb-3" style="border-radius: 10px; height: 150px; width: 100%; object-fit: cover;">
+                                <h5>نادي الزمالك الرياضي</h5>
+                                <p class="text-muted mb-2">الجيزة، مصر</p>
+                                <p class="mb-3"><strong>السعة:</strong> 800 شخص</p>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-sm">عرض</button>
+                                    <button class="btn btn-warning btn-sm">تعديل</button>
+                                    <button class="btn btn-danger btn-sm">حذف</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hours-content" class="tab-content">
+                    <h4 class="mb-4">إدارة الساعات</h4>
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>الفترة الزمنية</th>
+                                        <th>السعر</th>
+                                        <th>الرياضة</th>
+                                        <th>الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10:00 - 11:00</td>
+                                        <td>$25.00</td>
+                                        <td>كرة القدم</td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm">تعديل</button>
+                                            <button class="btn btn-danger btn-sm">حذف</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14:00 - 15:00</td>
+                                        <td>$30.00</td>
+                                        <td>التنس</td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm">تعديل</button>
+                                            <button class="btn btn-danger btn-sm">حذف</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sports-content" class="tab-content">
+                    <h4 class="mb-4">إدارة الرياضات</h4>
+                    <p class="text-center p-5">جاري تطوير هذا القسم</p>
+                </div>
+
+                <div id="bookings-content" class="tab-content">
+                    <h4 class="mb-4">إدارة الحجوزات</h4>
+                    <p class="text-center p-5">جاري تطوير هذا القسم</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.nav-link[data-tab]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all nav links
+                document.querySelectorAll('.nav-link').forEach(navLink => navLink.classList.remove('active'));
+                
+                // Add active class to clicked link
+                e.target.classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Show corresponding tab content
+                const targetTab = e.target.getAttribute('data-tab');
+                document.getElementById(targetTab + '-content').classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

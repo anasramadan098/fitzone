@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playgrounds - FitZone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/en.css">
+</head>
+<body dir="ltr">
+    <div class="up"><i class="fa-solid fa-arrow-up"></i></div>
+
+    <header>
+        <div class="logo"><img src="../imgs/logo.png" alt="Fit Sport Logo"></div>
+        <nav>
+            <ul class="links">
+                <li><a href="../index.html" data-translate="Home">Home</a></li>
+                <li><a href="playgrounds.html" class="active" data-translate="Playgrounds">Playgrounds</a></li>
+                <li><a href="../dashboards/user-dashboard.html" data-translate="User Dashboard">User Dashboard</a></li>
+                <li><a href="../dashboards/club-dashboard.html" data-translate="Club Dashboard">Club Dashboard</a></li>
+                <li><a href="../dashboards/admin-dashboard.html" data-translate="Admin Dashboard">Admin Dashboard</a></li>
+                <li><a href="contact.html" data-translate="Contact Us">Contact Us</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <div class="selected-lang">
+                    <span>English</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('ar')">العربية</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('en')">English</a></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <a href="javascript:void(0)" onclick="alert('Demo: Login')" data-translate="Login">Login</a>
+                <a href="javascript:void(0)" onclick="alert('Demo: Sign up')" class="btn" data-translate="Create Account">Create Account</a>
+            </div>
+        </nav>
+        <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <section class="hero">
+        <div class="text">
+            <h1>Playgrounds</h1>
+            <p>
+                <a href="../index.html">Home</a> 
+                <i class="fas fa-arrow-left"></i>
+                <span>Playgrounds</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="form">
+        <div class="holder">
+            <h2>All Playgrounds</h2>
+            <p>Find and book your favorite playgrounds with ease.</p>
+            <form action="javascript:void(0)" onsubmit="alert('Demo: Search functionality')">
+                <div class="inputs">
+                    <div class="input search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" name="search" id="search" placeholder="Search for a playground">
+                    </div>
+                    <div class="input sport">
+                        <select name="sport" id="sport">
+                            <option value="" selected disabled>Choose a sport</option>
+                            <option value="soccer">Football</option>
+                            <option value="padel">Padel</option>
+                            <option value="swimming">Swimming</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="tennis">Tennis</option>
+                            <option value="volleyball">Volleyball</option>
+                        </select>
+                    </div>
+                    <div class="input location">
+                        <select name="location" id="location">
+                            <option value="" selected disabled>Choose a location</option>
+                            <option value="cairo">Cairo</option>
+                            <option value="alex">Alexandria</option>
+                            <option value="giza">Giza</option>
+                        </select>
+                    </div>
+                    <div class="input date">
+                        <input type="date" name="date" id="date">
+                    </div>
+                </div>
+                <div class="outline">
+                    <button type="submit" class="btn">Search</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="cards">
+            <!-- Football Club Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/football.png" alt="Football Playground">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/sport-1.png" alt="Football Field">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>25</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Champions Football Club</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            6:00 - 8:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            New Cairo
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                22 / 18
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="4" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basketball Court Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/sport-1.png" alt="Basketball Court">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>20</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Elite Basketball Court</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            3:00 - 5:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            Zamalek
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                10 / 8
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="2" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tennis Court Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/sport-1.png" alt="Tennis Court">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>30</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Wimbledon Tennis Club</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            10:00 - 12:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            6th October
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                4 / 2
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="2" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swimming Pool Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/swim.png" alt="Swimming Pool">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>15</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Aqua Swimming Center</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            8:00 - 10:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            Maadi
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                50 / 35
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="15" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Padel Court Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/padel.png" alt="Padel Court">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>35</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Premium Padel Club</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            7:00 - 9:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            Sheikh Zayed
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                4 / 3
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="1" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volleyball Court Card -->
+            <div class="card">
+                <div class="card-inner" style="--clr:var(--tx-color);">
+                    <div class="box">
+                        <div class="imgBox">
+                            <div class="swiper-container swiper imgsSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="../imgs/sport-1.png" alt="Volleyball Court">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="icon">
+                            <a href="#" class="iconBox">
+                                <span>18</span>
+                                £
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="name" onclick="alert('Demo: Club page')">
+                            <img src="../imgs/user.gif" alt="User">
+                            <h3>Beach Volleyball Arena</h3>
+                        </div>
+                        <div class="rate">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <img src="../imgs/star.gif" alt="Star">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="time">
+                            <img src="../imgs/clock.gif" alt="Clock">
+                            4:00 - 6:00
+                        </div>
+                        <div class="location">
+                            <img src="../imgs/maps.gif" alt="Location">
+                            North Coast
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" onclick="alert('Demo: View players')">
+                        <div class="row">
+                            <div class="count">
+                                <i class="fa-solid fa-user"></i>
+                                12 / 9
+                            </div>
+                            <p>Want to know who is with you?</p>
+                        </div>
+                    </a>
+                    <div class="outline" style="width: 100%">
+                        <form action="javascript:void(0)" onsubmit="alert('Demo: Booking functionality')" method="POST" style="padding: 0">
+                            <input type="number" name="count" maxlength="2" max="3" min="1" value="1">
+                            <select name="payment_method" required>
+                                <option value="" selected disabled>Choose a payment method</option>
+                                <option value="cash">Cash on arrival</option>
+                                <option value="paymob">Electronic wallet</option>
+                                <option value="instapay">InstaPay</option>
+                                <option value="fawry">Fawry</option>
+                            </select>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="logo"><img src="../imgs/logo.png" alt="Logo"></div>
+            <ul class="links">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="payments">
+                <li><img src="../imgs/fawry.png" alt="Fawry"></li>
+                <li><img src="../imgs/paymob.png" alt="Paymob"></li>
+                <li><img src="../imgs/cod.png" alt="Cash On Delivery"></li>
+            </ul>
+            <ul class="social">
+                <li><a href="#"><img src="../imgs/facebook.gif" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../imgs/tiktok.gif" alt="TikTok"></a></li>
+                <li><a href="#"><img src="../imgs/instagram.gif" alt="Instagram"></a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; <span><script>document.write(new Date().getFullYear());</script></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Initialize Swiper for playground image galleries
+        var imgsSwiper = new Swiper('.imgsSwiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

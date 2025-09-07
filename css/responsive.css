@@ -1,0 +1,452 @@
+/*
+========================================
+General Responsive Styles
+========================================
+*/
+
+/* Enhanced Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block !important;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    
+    header nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-color);
+        padding: 100px 20px 20px;
+        flex-direction: column;
+        z-index: 9998;
+    }
+    
+    header nav.active {
+        display: flex;
+    }
+    
+    header nav ul.links {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    header nav .btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Dashboard Responsive Improvements */
+    .user-dash {
+        padding: 20px 15px;
+    }
+    
+    .user-links {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .user-links li {
+        flex: 1;
+        min-width: calc(50% - 5px);
+    }
+    
+    .user-links a {
+        padding: 12px 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    .statics {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .user-info {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .user-info .box {
+        width: 100%;
+        padding: 20px 15px;
+    }
+    
+    .dashboard .boxes {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .activity table {
+        font-size: 14px;
+    }
+    
+    .activity table th,
+    .activity table td {
+        padding: 8px 4px;
+    }
+    
+    /* Admin Dashboard Responsive */
+    .admin-container .sidebar {
+        width: 100%;
+        position: fixed;
+        left: -100%;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .admin-container .sidebar.show {
+        left: 0;
+    }
+    
+    .admin-container .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .stats-card {
+        margin-bottom: 20px;
+    }
+    
+    .chart-card {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .table-responsive {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    footer .logo {
+        max-width: 100%;
+    }
+    .cards .card {
+        width: 100% !important;
+        input , select {
+            width: 100% !important;
+        }
+    }
+    section.steps {
+        ul.steps , .step-img  {
+            width: 100%;
+        }
+    }
+    * {
+        text-align: center;
+    }
+
+    header ,
+    section.hero,
+    section.benifits,
+    section.how,
+    section.sports,
+    section.faq,
+    section.steps,
+    section.affilate,
+    footer .row
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .hero .first {
+        top: 79%;
+        right: 10%;
+    }
+    .hero .second {
+        top: 40%;
+        right: 0%;
+    }
+    .hero .third {
+        top: 82%;
+        right: 64%;
+    }
+    .hero .four {
+        top: 17%;
+        right: 70%;
+    }
+    .hero .five {
+        top: 15%;
+        right: 1%;
+    }
+
+    section.hero , 
+    section.affilate ,
+    section.sports {
+        &::before , &::after {
+            left: 0;
+        }
+        .text {
+            width: auto;
+            max-width:none;
+        }
+    }
+    header {
+            position: absolute;
+            nav ul li a{
+                font-size: 22px;
+            }
+            nav .btns a  {
+                padding: 5px 5px;
+                font-size: 17px;
+            
+            }
+            nav {
+                flex-direction: column;
+                background: var(--bg-color);
+                padding: 30px;
+                min-height: 100vh;
+                position: fixed;
+                padding-top: 130px;
+                top: 0;
+                right: 0;
+                transition: .3s;
+                gap: 20px;
+                display: none;
+                &.active {
+                    display: flex;
+                }
+                ul {
+                    align-items: start;
+                }
+                .btns , ul {
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+            .menu-icon {
+                font-size: 30px;
+                position: absolute;
+                right: 5%;
+                top: 30%;
+                color: #fff;
+                z-index: 5000;
+            }
+    }
+    section.how::before {
+        background-size: cover;
+    }
+    
+    .outline {
+        margin: 10px auto;
+    }
+
+    .text h1, .text h2 {
+        font-size: 1.8em;
+        margin: 15px 0;
+    }
+    .text h4 {
+        font-size: 1.2em;
+    }
+    .text p {
+        font-size: 1em;
+    }
+
+    .login-pop-up .box {
+        min-width: 95%;
+        padding: 20px 15px;
+    }
+
+    .login-pop-up form .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .login-pop-up form .row .input {
+        width: 100%;
+    }
+
+    section.hero .text h1 {
+        font-size: 2.2em;
+    }
+
+    section.benifits .cards .card, form .inputs .input, form .row .input {
+        width: 100%;
+    }
+
+    section.terms {
+        padding: 60px 15px !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    section:not(.sports), header, footer {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+    .cards .card {
+        width: 100% !important;
+    }
+
+    .text h1, .text h2 {
+        font-size: 2.2em;
+    }
+
+    .login-pop-up .box {
+        min-width: 500px;
+    }
+
+    section.hero .text h1 {
+        font-size: 3em;
+    }
+
+    form .inputs .input, form .row .input {
+        width: calc(50% - 10px);
+    }
+
+    section.benifits .cards .card {
+        width: calc(50% - 10px);
+    }
+
+    section.terms {
+        padding: 80px 30px !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+
+
+    .text h1, .text h2 {
+        font-size: 2.5em;
+    }
+
+    section.hero .text h1 {
+        font-size: 4em;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 100%;
+        background-color: var(--hover-color);
+        padding: 20px;
+        border-top: 1px solid #4e4399;
+        z-index: 100;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 25px;
+    }
+
+    header nav .btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        color: #fff;
+        font-size: 1.8em;
+        cursor: pointer;
+    }
+
+    section.hero {
+        text-align: center;
+    }
+
+    section.hero .text {
+        width: 100%;
+    }
+
+    section.benifits, section.affilate, section.steps {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    section.benifits .img, section.benifits .text,
+    section.affilate .img, section.affilate .text,
+    section.steps ul.steps, section.steps .step-img {
+        width: 80%;
+        margin: auto;
+    }
+
+    section.how .text, section.faq .text {
+        max-width: 80%;
+    }
+
+    footer .row {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    footer .row:first-child ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .row:first-child ul li:not(:last-child) a {
+        border-left: none;
+        padding: 0;
+    }
+
+    section.terms {
+        padding: 100px 40px !important;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    section:not(.sports), header, footer {
+        padding-right: 60px !important;
+        padding-left: 60px !important;
+    }
+    
+
+    .menu-icon {
+        display: none;
+    }
+
+    header nav {
+        display: flex !important;
+    }
+
+    section.terms {
+        padding: 100px 100px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .menu-icon {
+        display: none;
+    }
+
+    header nav {
+        display: flex !important;
+    }
+}

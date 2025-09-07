@@ -1,0 +1,60 @@
+.hero {
+    > i {
+        position: absolute;
+        color: #fff;
+        opacity: .3;
+        font-size: 5em;
+    }
+    .first {
+        top: 15%;
+        right: 90%;
+        transform: perspective(400px) rotateX(0) rotateY(0);
+        animation: rotate3D 10s linear infinite;
+    }
+    .second {
+        top: 15%;
+        right: 55%;
+        animation: translate3D 8s ease-in-out infinite;
+    }
+    .third {
+        top: 10%;
+        right: 15%;
+        animation: skew3D 12s ease infinite;
+    }
+    .four {
+        top: 65%;
+        right: 50%;
+        animation: rotate3D 15s linear infinite;
+    }
+    .five {
+        top: 60%;
+        right: 85%;
+        animation: translate3D 10s ease-in-out infinite;
+    }
+}
+@keyframes rotate3D {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes translate3D {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-20px, 50px, 70px);
+    }
+}
+
+@keyframes skew3D {
+    0%, 100% {
+        transform: perspective(400px) rotateX(0) rotateY(0);
+    }
+    50% {
+        transform: perspective(400px) rotateX(30deg) rotateY(45deg);
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Demo Images</title>
+</head>
+<body>
+    <h1>Demo Image Generator</h1>
+    <p>This page generates demo images for the playgrounds. Right-click on images to save them.</p>
+    
+    <div id="images"></div>
+
+    <script>
+        const playgrounds = [
+            {name: 'Elite Football Stadium', sport: 'football', color1: '#2E7D32', color2: '#4CAF50'},
+            {name: 'Champions Basketball Court', sport: 'basketball', color1: '#FF6F00', color2: '#FF8F00'},
+            {name: 'Royal Tennis Club', sport: 'tennis', color1: '#1976D2', color2: '#2196F3'},
+            {name: 'Aqua Swimming Pool', sport: 'swimming', color1: '#0277BD', color2: '#03A9F4'},
+            {name: 'Premium Padel Court', sport: 'padel', color1: '#7B1FA2', color2: '#9C27B0'},
+            {name: 'Victory Volleyball Arena', sport: 'volleyball', color1: '#D32F2F', color2: '#F44336'},
+            {name: 'Golden Football Field', sport: 'football', color1: '#F57F17', color2: '#FBC02D'},
+            {name: 'Crystal Basketball Court', sport: 'basketball', color1: '#5D4037', color2: '#8D6E63'}
+        ];
+
+        const sportIcons = {
+            football: '⚽',
+            basketball: '🏀',
+            tennis: '🎾', 
+            swimming: '🏊',
+            padel: '🏓',
+            volleyball: '🏐'
+        };
+
+        function createDemoImage(playground) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 250;
+            const ctx = canvas.getContext('2d');
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, playground.color1);
+            gradient.addColorStop(1, playground.color2);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add pattern overlay
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            for(let i = 0; i < canvas.width; i += 50) {
+                for(let j = 0; j < canvas.height; j += 50) {
+                    if((i + j) % 100 === 0) {
+                        ctx.fillRect(i, j, 25, 25);
+                    }
+                }
+            }
+
+            // Add sport icon
+            ctx.font = '80px Arial';
+            ctx.fillStyle = 'rgba(255,255,255,0.8)';
+            ctx.textAlign = 'center';
+            ctx.fillText(sportIcons[playground.sport], canvas.width/2, canvas.height/2 + 20);
+
+            // Add text
+            ctx.font = 'bold 20px Arial';
+            ctx.fillStyle = 'white';
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 5;
+            ctx.fillText(playground.name, canvas.width/2, canvas.height - 30);
+
+            return canvas;
+        }
+
+        // Generate images
+        const imagesContainer = document.getElementById('images');
+        playgrounds.forEach((playground, index) => {
+            const canvas = createDemoImage(playground);
+            const div = document.createElement('div');
+            div.style.margin = '20px';
+            div.style.display = 'inline-block';
+            
+            const title = document.createElement('h3');
+            title.textContent = playground.name;
+            div.appendChild(title);
+            div.appendChild(canvas);
+            
+            // Add download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = canvas.toDataURL();
+            downloadLink.download = `playground-${playground.sport}-${index + 1}.png`;
+            downloadLink.textContent = 'Download';
+            downloadLink.style.display = 'block';
+            downloadLink.style.marginTop = '10px';
+            div.appendChild(downloadLink);
+            
+            imagesContainer.appendChild(div);
+        });
+    </script>
+</body>
+</html>

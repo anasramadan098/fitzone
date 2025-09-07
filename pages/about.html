@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FitZone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/en.css">
+</head>
+<body dir="ltr">
+    <div class="up"><i class="fa-solid fa-arrow-up"></i></div>
+
+    <header>
+        <div class="logo"><img src="../imgs/logo.png" alt="Fit Sport Logo"></div>
+        <nav>
+            <ul class="links">
+                <li><a href="../index.html" data-translate="Home">Home</a></li>
+                <li><a href="playgrounds.html" data-translate="Playgrounds">Playgrounds</a></li>
+                <li><a href="../dashboards/user-dashboard.html" data-translate="User Dashboard">User Dashboard</a></li>
+                <li><a href="../dashboards/club-dashboard.html" data-translate="Club Dashboard">Club Dashboard</a></li>
+                <li><a href="../dashboards/admin-dashboard.html" data-translate="Admin Dashboard">Admin Dashboard</a></li>
+                <li><a href="contact.html" data-translate="Contact Us">Contact Us</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <div class="selected-lang">
+                    <span>English</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <ul class="lang-menu">
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('ar')">العربية</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchLanguage('en')">English</a></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <a href="javascript:void(0)" onclick="alert('Demo: Login')" data-translate="Login">Login</a>
+                <a href="javascript:void(0)" onclick="alert('Demo: Sign up')" class="btn" data-translate="Create Account">Create Account</a>
+            </div>
+        </nav>
+        <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <section class="benifits">
+        <div class="img"><img src="../imgs/about.png" alt="About"></div>
+        <div class="text">
+            <h4>About FitZone</h4>
+            <h1>Your Sports Community Platform</h1>
+            <p>FitZone is the leading platform for connecting sports enthusiasts, booking venues, and building an active community. We make it easy to find, book, and enjoy sports facilities across Egypt.</p>
+            <div class="cards">
+                <div class="card">
+                    <img src="../imgs/benift-1.png" alt="Mission">
+                    <h5>Our Mission</h5>
+                    <p>To make sports accessible to everyone</p>
+                </div>
+                <div class="card">
+                    <img src="../imgs/benift-1.png" alt="Vision">
+                    <h5>Our Vision</h5>
+                    <p>A healthier, more active community</p>
+                </div>
+                <div class="card">
+                    <img src="../imgs/benift-1.png" alt="Values">
+                    <h5>Our Values</h5>
+                    <p>Community, Quality, Innovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 50px 20px; text-align: center; background: #f8f9fa;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2>Our Story</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #666;">
+                Founded in 2024, FitZone was born from a simple idea: sports should bring people together. 
+                Our platform connects athletes, venue owners, and sports enthusiasts in one comprehensive ecosystem. 
+                Whether you're looking to book a football field, join a tennis match, or find training partners, 
+                FitZone makes it happen with just a few clicks.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="logo"><img src="../imgs/logo.png" alt="Logo"></div>
+            <ul class="links">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="payments">
+                <li><img src="../imgs/fawry.png" alt="Fawry"></li>
+                <li><img src="../imgs/paymob.png" alt="Paymob"></li>
+                <li><img src="../imgs/cod.png" alt="Cash On Delivery"></li>
+            </ul>
+            <ul class="social">
+                <li><a href="#"><img src="../imgs/facebook.gif" alt="Facebook"></a></li>
+                <li><a href="#"><img src="../imgs/tiktok.gif" alt="TikTok"></a></li>
+                <li><a href="#"><img src="../imgs/instagram.gif" alt="Instagram"></a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p>Copyright &copy; <span><script>document.write(new Date().getFullYear());</script></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        function switchLanguage(lang) {
+            // Language switcher functionality would be implemented here
+            if (lang === 'ar') {
+                document.querySelector('.selected-lang span').textContent = 'العربية';
+            } else {
+                document.querySelector('.selected-lang span').textContent = 'English';
+            }
+        }
+    </script>
+</body>
+</html>
